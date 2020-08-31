@@ -16,8 +16,12 @@ public:
     Text();
     ~Text();
 
-    const int number_of_vowels();
-    const int number_of_consonants();
+    const int number_of_vowels() const;
+    const int number_of_consonants() const;
+    const bool find_string(const std::string& s);
+    const std::string to_string();
+
+    static const bool is_int(const std::string& str);
 };
 
 

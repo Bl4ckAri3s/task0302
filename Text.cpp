@@ -2,6 +2,7 @@
 // Created by alex on 11. 08. 20.
 //
 
+#include <sstream>
 #include "Text.h"
 
 Text::Text() {
@@ -14,7 +15,7 @@ Text::~Text() {
 }
 
 
-const int Text::number_of_vowels() {
+const int Text::number_of_vowels() const {
     int num = 0;
 
     for (const auto& word : lines) {
@@ -29,7 +30,7 @@ const int Text::number_of_vowels() {
 }
 
 
-const int Text::number_of_consonants() {
+const int Text::number_of_consonants() const {
     int num = 0;
 
     for (const auto& word : lines) {
@@ -43,4 +44,25 @@ const int Text::number_of_consonants() {
     return num;
 }
 
+const bool Text::find_string(const std::string &s) {
+    for (const auto& word : lines) {
+        return word.find(s) <= word.size();
+    }
+}
 
+const std::string Text::to_string() {
+    std::stringstream ss;
+
+    for (const auto& word : lines)
+        ss << word;
+
+    return ss.str();
+}
+
+const bool Text::is_int(const std::string& str) {
+    for (const auto& ch : str) {
+        if (!isdigit(ch))
+            return false;
+    }
+    return true;
+}
