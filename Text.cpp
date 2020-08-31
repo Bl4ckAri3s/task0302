@@ -66,3 +66,7 @@ const bool Text::is_int(const std::string& str) {
     }
     return true;
 }
+
+const int Text::string_to_int(const std::string &str) {
+    // TODO: function that converts a given string to intiger
+}
