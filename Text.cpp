@@ -30,6 +30,8 @@ const int Text::number_of_vowels() const {
 }
 
 
+
+
 const int Text::number_of_consonants() const {
     int num = 0;
 
@@ -44,11 +46,17 @@ const int Text::number_of_consonants() const {
     return num;
 }
 
+
+
+
 const bool Text::find_string(const std::string &s) {
     for (const auto& word : lines) {
         return word.find(s) <= word.size();
     }
 }
+
+
+
 
 const std::string Text::to_string() {
     std::stringstream ss;
@@ -59,6 +67,9 @@ const std::string Text::to_string() {
     return ss.str();
 }
 
+
+
+
 const bool Text::is_int(const std::string& str) {
     for (const auto& ch : str) {
         if (!isdigit(ch))
@@ -67,6 +78,12 @@ const bool Text::is_int(const std::string& str) {
     return true;
 }
 
-const int Text::string_to_int(const std::string &str) {
-    // TODO: function that converts a given string to intiger
+
+
+
+const int Text::string_to_int(std::string &str) {
+    if (Text::is_int(str))
+        return std::stoi(str);
+    else
+        return INT32_MIN;
 }

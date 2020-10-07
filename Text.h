@@ -22,7 +22,7 @@ public:
     const std::string to_string();
 
     static const bool is_int(const std::string& str);
-    static const int string_to_int(const std::string& str);
+    static const int string_to_int(std::string& str);
 };
 
 
